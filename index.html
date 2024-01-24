@@ -1,25 +1,24 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Main Page</title>
-    <link rel="stylesheet" href="styles.css">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=PT+Sans:wght@400;700&display=swap">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="styles.css">
+  <title>Your Portfolio</title>
 </head>
-<body>
+<body class="index">
+<div><h1>Dribble style project modal</h1></div>
+  <!-- Collection Item Cards -->
+  <div class="collection-item" data-project-url="project1.html"><button>Modal</button></div>
+  <!-- Add more collection items as needed -->
 
-<div class="main-container">
-    <button class="read-more-1" href="project-1.html">Open Modal 1</button>
-    <button class="read-more-2" href="project-2.html">Open Modal 2</button>
-</div>
-<!--Модальное окно-->
-<div id="modal-window"></div>
-<div class="modal-overlay"></div>
-<div class="modal-close"></div>
+  <!-- Popup Modal -->
+  <div class="popup-modal">
+    <div class="close-btn">&times;</div>
+    <iframe id="project-iframe" src="" frameborder="0"></iframe>
+  </div>
+  <div class="overlay"></div>
 
-<script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
-<script src="script.js"></script>
-
+  <script defer src="scripts.js"></script>
 </body>
 </html>
