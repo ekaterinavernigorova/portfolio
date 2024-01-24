@@ -4,7 +4,6 @@ document.addEventListener('DOMContentLoaded', function () {
   const iframe = document.getElementById('project-iframe');
   const overlay = document.querySelector('.overlay');
 
-
   collectionItems.forEach(item => {
     item.addEventListener('click', function () {
       const projectUrl = item.getAttribute('data-project-url');
@@ -17,14 +16,24 @@ document.addEventListener('DOMContentLoaded', function () {
   function openModal(projectUrl) {
     iframe.src = projectUrl;
     history.pushState({ page: projectUrl }, null, projectUrl);
-    popupModal.style.display = 'block';
-    overlay.style.display='block';
+    overlay.style.display = 'block';
+
+    // Add 'active' class to apply transition
+    setTimeout(() => {
+      popupModal.classList.add('active');
+    }, 10);
   }
 
   function closeModal() {
     history.pushState({ page: 'index.html' }, null, 'index.html');
-    popupModal.style.display = 'none';
-    overlay.style.display = 'none';
+
+    // Remove 'active' class to apply transition
+    popupModal.classList.remove('active');
+    
+    // Delay hiding the modal to allow the transition
+    setTimeout(() => {
+      overlay.style.display = 'none';
+    }, 300);
   }
 
   // Listen for browser back/forward buttons
@@ -33,6 +42,3 @@ document.addEventListener('DOMContentLoaded', function () {
     iframe.src = pageUrl;
   });
 });
-
-
-
